@@ -4,8 +4,6 @@ import { LSReloadingWrapper } from "../../network/components/LSReloadingWrapper"
 import { CoursesList } from "./ls-components/CoursesList";
 import { ApplyNow } from "./ApplyNow";
 import { InStructorTestimonials } from "./ls-components/InStructorTestimonials";
-// import { PlacementEssentials } from "./components/PlacementEssentials";
-// import { OurHighLights } from "./components/OurHighLights";
 import { Presentations } from "./components/Presentations";
 import { HeroSection } from "./components/HeroSection";
 import { HomeNavBar } from "./HomeNavBar";
@@ -35,14 +33,14 @@ export const Home = () => {
         apiStatusViews$={homeScreenModel.views_courses}
         onReload={fetchCourses}
       >
-        <CoursesList coursesList$={homeScreenModel.courses$.data}/>
+        <CoursesList coursesList$={homeScreenModel.courses$.data} />
       </LSReloadingWrapper>
       <LSReloadingWrapper apiStatusViews$={homeScreenModel.views_instructor_testimonials} onReload={fetchInstructorTestimonials}>
         <InStructorTestimonials data$={homeScreenModel.instructorTestimonials$.data} />
       </LSReloadingWrapper>
       <ApplyNow />
-      <Presentations /> 
-      <FAQs/>
+      <Presentations />
+      <FAQs />
     </div>
   );
 };

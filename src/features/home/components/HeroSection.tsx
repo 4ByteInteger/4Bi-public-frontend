@@ -7,7 +7,7 @@ export const HeroSection = () => {
         <div className="left">
             <h1>Upskill for professional excellence</h1>
             <p>Social learning and expert-led programs to start, transition or boost your career</p>
-            <p style={{color: 'white'}}>Trusted By</p>
+            <p style={{ color: 'white' }}>Trusted By</p>
             <div className="fr-aic g-10 items">
                 <div className="item1 item fc jc-c">
                     <b>3.5K +</b>

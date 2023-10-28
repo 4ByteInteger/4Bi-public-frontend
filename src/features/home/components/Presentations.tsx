@@ -29,18 +29,20 @@ let items = [
 ]
 
 export const Presentations = () => {
-    return <div className="presentations-container">
-        <p className="root-title">Presenting the <span className="head-brand">4ByteInteger</span> way!</p>
-        <div className="presentations">
-            {
-                items.map((item, index) => {
-                    return <div className="item">
-                        <item.Icon className={`icon icon${index + 1}`} />
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                    </div>
-                })
-            }
+    return (
+        <div className="presentations-container">
+            <p className="root-title">Presenting the <span className="head-brand">4ByteInteger</span> way!</p>
+            <div className="presentations">
+                {
+                    items.map((item, index) => {
+                        return <div className="item">
+                            <item.Icon className={`icon icon${index + 1}`} />
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                        </div>
+                    })
+                }
+            </div>
         </div>
-    </div>;
+    );
 }

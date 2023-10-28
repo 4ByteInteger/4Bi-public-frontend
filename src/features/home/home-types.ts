@@ -38,6 +38,6 @@ export interface IInstructorTestimonialResponse {
 
 export interface IInstructorTestimonialModel {
   apiStatus: ApiStatus;
-  data?: IInstructorTestimonialResponse;
+  data?: IInstructorTestimonial[];
   error?: IError;
 }

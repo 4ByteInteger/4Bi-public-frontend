@@ -1,7 +1,7 @@
 import { ObservableObject, batch, computed, observable } from "@legendapp/state";
 import { ICoursesModel, IInstructorTestimonialModel } from "./home-types";
 import { Endpoints } from "../../network/Endpoints";
-import { RequestMethods, getApiStatus, request } from "../../network/request";
+import { RequestMethods, getApiStatus } from "../../network/request";
 import Aravind from "../../images/aravind.jpg";
 import Bharath from "../../images/bharath.jpg";
 
