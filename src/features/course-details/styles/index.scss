@@ -1,0 +1,27 @@
+@import "../../../styles/colors.scss";
+
+.root-course-details-container {
+  background-color: $brand-bg;
+  gap: 20px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 4fr 10fr;
+  .shortcut-menu {
+    padding: 10px;
+    background-color: #221d32;
+    border-radius: 10px;
+    align-self: start;
+    display: flex;
+    flex-flow: column wrap;
+    .item {
+      color: #b8b7bd;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .item:hover {
+      background-color: #e8dcfe;
+      color: #683fbe;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../../styles/colors.scss";
+
+.presentations-container {
+    background-color: #171421;
+    padding: 100px 0;
+    line-height: 1.8;
+    .root-title { 
+        text-align: center;
+        padding: 20px 0;
+        color: $white;
+        font-size: 32px;
+        font-weight: 600;
+        .head-brand {
+            color: #653DB8;
+        }
+    }
+    .presentations {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .item {
+            border: 2px solid #413E49;
+            width: 250px;
+            color: #BDBDBD;
+            min-height: 200px;
+            padding: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+            margin: 25px 0;
+
+            .icon {
+                position: absolute;
+                top: -40px;
+                padding: 20px;
+                border-radius: 50%;
+            }
+
+            .icon1 {
+                background: linear-gradient(to bottom, #BD7F60, #4B3534);
+            }
+
+            .icon2 {
+                background: linear-gradient(to bottom, #46856B, #29423F);
+            }
+
+            .icon3 {
+                background: linear-gradient(to bottom, #6B89DE, #2E3658);
+            }
+
+            .icon4 {
+                background: linear-gradient(to bottom, #553599, #2C1F4B);
+            }
+        }
+
+        .item:hover {
+            color: white;
+        }
+    }
+}

@@ -60,7 +60,7 @@ export const ApplyNow = observer(() => {
             className="input"
             type="text"
             name="firstName"
-            placeholder="Full Name"
+            placeholder="First Name"
             required
           />
           <input 

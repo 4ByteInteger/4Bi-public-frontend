@@ -1,3 +1,5 @@
+@import "../../styles/colors.scss";
+
 .modal-right {
   position: fixed;
   z-index: 9999;
@@ -48,9 +50,10 @@
         flex-grow: 1;
       }
       .btn {
-        background-image: linear-gradient(to right, #3a7aec, #9137ec);
-        color: white;
+        background-color: $brand;
+        color: $white;
         font-weight: 600;
+        font-size: 18px;
         cursor: pointer;
         justify-content: center;
       }

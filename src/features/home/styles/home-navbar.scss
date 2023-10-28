@@ -1,0 +1,54 @@
+@import "../../../styles/colors.scss";
+
+.home-navbar-container {
+  padding: 5px 18px;
+  position: sticky;
+  top: 0;
+  background-color: $brand;
+  z-index: 10;
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $white;
+      font-weight: 500;
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      color: $white;
+      font-weight: 600;
+      background-color: #e8dcfe;
+      color: #6e47c2;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .home-navbar-container {
+    padding: 10px;
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+    .right {
+      gap: 10px;
+      width: 100%;
+      font-size: 14px;
+      justify-content: space-evenly;
+      padding: 10px;
+    }
+    .left {
+      display: none;
+    }
+  }
+}

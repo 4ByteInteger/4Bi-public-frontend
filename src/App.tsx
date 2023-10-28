@@ -8,22 +8,28 @@ import { McqQuestionsSurface } from "./features/mcq/McqQuestionsSurface";
 import { NavBar } from "./global/navbar";
 import { Home } from "./features/home";
 import { GlobalSnackBar } from "./components/snackbar/GlobalSnackBar";
+import { PublicRoutes } from "./routes/publlicRoutes";
 
 function App() {
+  return <>
+    <PublicRoutes />
+  </>;
+
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar />
       <Routes>
         <Route Component={Home} path="/" />
-        <Route Component={NotesHome} path={"/javascript-notes"} />
-        {/* <Route Component={() => null} path="/home" /> */}
-        {/* <Route
+        <Route Component={NotesHome} path={"/javascript-notes"} /> */}
+      {/* <Route Component={() => null} path="/home" /> */}
+      {/* <Route
           Component={McqQuestionsSurface}
           path={"/mcq-question/:questionId"}
         /> */}
-        {/* <Route Component={ProblemContainer} path="/problem/:problemId" /> */}
-      </Routes>
-      <GlobalSnackBar />
+      {/* <Route Component={ProblemContainer} path="/problem/:problemId" /> */}
+      {/* </Routes>
+      <GlobalSnackBar /> */}
+
     </BrowserRouter>
   );
 }

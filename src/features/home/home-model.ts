@@ -1,7 +1,76 @@
 import { ObservableObject, batch, computed, observable } from "@legendapp/state";
-import { ICourseItem, ICoursesModel, IInstructorTestimonialModel } from "./home-types";
+import { ICoursesModel, IInstructorTestimonialModel } from "./home-types";
 import { Endpoints } from "../../network/Endpoints";
 import { RequestMethods, getApiStatus, request } from "../../network/request";
+import Aravind from "../../images/aravind.jpg";
+import Bharath from "../../images/bharath.jpg";
+
+const coursesList = [
+    {
+        "courseId": 184253,
+        "courseName": "Frontend with React",
+        "duration": 4.5,
+        "description": "Master frontend development build large scale projects with team of students", "imageUrl": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png",
+        "courseType": "SOFTWARE",
+        "price": 15000,
+        "discount": 0,
+        "curriculumPoints": [
+            "HTML and CSS",
+            "JavaScript Basic to Advanced",
+            "DSA using JavaScript",
+            "Document Object Model(DOM)",
+            "Projects using HTML, CSS, JavaScript",
+            "React Basic to Advanced",
+            "Redux",
+            "Solid projects using React"
+        ],
+        "link": "frontend-course-details"
+    },
+    {
+        "courseId": 184254,
+        "courseName": "DSA using C++",
+        "duration": 4.0,
+        "description": "Master DSA using C++ from scratch with expert instructors in the domain", "imageUrl": "https://s3.amazonaws.com/coursesity-blog/2020/07/data-structure-algorithm-courses.png",
+        "courseType": "SOFTWARE",
+        "price": 15000,
+        "discount": 0,
+        "curriculumPoints": [
+            "C++ basics to Advanced",
+            "C++ STL", "Leetcode 200+ Problems",
+            "Arrays, Stacks, Queues",
+            "LinkedList",
+            "Trees, Graphs",
+            "Dynamic Programming",
+            "Tries"
+        ],
+        "link": "dsa-course-details"
+    }
+]
+
+const instructors = [
+    {
+        "name": "Aravind Samudrala",
+        "company": "Blue Yonder | Ex BlackBuck",
+        "role": "FullStack Developer",
+        "designation": "SWE2 Blue Yonder",
+        "college": "NIT Warangal'23 - BTech ECE",
+        "degree": "BTech",
+        "imageUrl": Aravind,
+        "linkedinUrl": "https://www.linkedin.com/in/samudrala-aravind-13599b172/", "companyLogoUrl": "https://www.blackbuck.com/images/blackbuck-logo.svg",
+        "description": "Aravind is an exceptional Instructor for advanced front-end development, OOPS, & Node.js. He strives to aid students in securing frontend and backend positions at product-based companies.",
+    },
+    {
+        "name": "Bharath Reddy",
+        "company": "Amazon | Ex Saras",
+        "role": "Backend Developer",
+        "designation": "SDE1 Saras Analytics",
+        "college": "NIT Warangal'23 - BTech CSE",
+        "degree": "BTech",
+        "imageUrl": Bharath,
+        "linkedinUrl": "https://www.linkedin.com/in/samudrala-aravind-13599b172/",
+        "companyLogoUrl": "https://cdn.logojoy.com/wp-content/uploads/20230629132639/current-logo-1536x864.png",
+        "description": "Bharath, an NIT Warangal CSE graduate, excels in data structures and algorithms. He secured a 6-month Amazon internship, earned a PPO, and contributed as a Backend Developer at Saras Analytics."
+    }];
 
 class HomeScreenModel {
     courses$: ObservableObject<ICoursesModel>;
@@ -18,11 +87,17 @@ class HomeScreenModel {
     }
 
     private fetchAllCourses = async () => {
-        const httpConfig = { 
+        const httpConfig = {
             url: Endpoints.coursesList,
             method: RequestMethods.GET,
         }
 
+        batch(() => {
+            this.courses$.apiStatus.set('success');
+            this.courses$.data?.set?.(coursesList);
+        })
+
+        /* 
         const response = await request(httpConfig);
         if(response.status === "success"){
             const serverResponse: ICourseItem[] = response.data?.result ;
@@ -38,6 +113,7 @@ class HomeScreenModel {
                 this.courses$.error?.errorMessage?.set?.(response.message);
             })
         }
+        */
     }
 
     private fetchInstructorTestimonials = async () => {
@@ -46,6 +122,11 @@ class HomeScreenModel {
             method: RequestMethods.GET
         }
 
+        this.instructorTestimonials$.set({
+            apiStatus: 'success',
+            data: instructors
+        })
+        /*
         const response = await request(httpConfig);
         if(response.status === "success"){
             const serverResponse = response.data?.result; 
@@ -59,6 +140,7 @@ class HomeScreenModel {
         else {
             // TODO: show a tosat message
         }
+        */
     };
 
     views_courses = computed(() => getApiStatus(this.courses$.apiStatus.get()));
@@ -71,6 +153,6 @@ class HomeScreenModel {
     }
 }
 
-export function createHomeScreenModel(){
+export function createHomeScreenModel() {
     return new HomeScreenModel();
 }

@@ -9,6 +9,7 @@ import { ICourseItem } from "../home-types";
 import "../styles/course-list.scss";
 import { applyNowModel } from "../apply-now-model";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Link } from "react-router-dom";
 
 interface Props {
   coursesList$: ObservableObject<ICourseItem[]>;
@@ -22,19 +23,19 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
   }
 
   return (
-    <section className="our-courses">
+    <section className="our-courses" id="courses">
       <div className="section-title">Our Courses</div>
       <div className="courses">
         {coursesList?.map?.((course) => {
           return (
             <div className="course-item" key={course.courseId}>
-              <div className="header fr-aic g-10" style={{backgroundImage: `url(${course.imageUrl})`}}>
+              <div className="header fr-aic g-10" style={{ backgroundImage: `url(${course.imageUrl})` }}>
                 <b className="badge">{course.courseType}</b>
               </div>
               <div className="body">
                 <div className="body-top">
                   <div className="fr-aic g-10">
-                      <BookmarksIcon />
+                    <BookmarksIcon />
                     <h4>{course.courseName}</h4>
                   </div>
                   <div className="chips fr-aic">
@@ -53,8 +54,8 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
                   {course?.curriculumPoints?.map((point, index) => {
                     return (
                       <div className="fr-aic g-10 point" key={index}>
-                        <CheckCircleOutlineOutlinedIcon />
-                        <span>{point}</span>
+                        <CheckCircleOutlineOutlinedIcon className="icon" />
+                        <span className="text">{point}</span>
                       </div>
                     );
                   })}
@@ -62,10 +63,10 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
               </div>
               <div className="footer fr-aic jc-sb g-10">
                 <button className="btn-apply" onClick={toggleApplyNowModal}>Get a callback</button>
-                <button className="btn-apply fr-aic jc-c g-10" onClick={toggleApplyNowModal}>
-                  <span>Learn More</span>
-                  <ChevronRightIcon style={{fontSize: "16px"}}/>
-                </button>
+                <Link to={course.link} className="btn-apply link fr-aic jc-c g-10">
+                  <span>View Details</span>
+                  <ChevronRightIcon style={{ fontSize: "16px" }} />
+                </Link>
               </div>
             </div>
           );

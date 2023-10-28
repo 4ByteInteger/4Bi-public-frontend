@@ -2,21 +2,21 @@
 
 .root-navbar-container {
   padding: 20px;
-  background-color: $navbar-background;
+  background-color: #0d0c14;
   display: flex;
   gap: 20px;
   position: sticky;
   top: 0;
   z-index: 100;
   .link {
-    color: $navbar-link-text;
+    color: #c0bebe;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
   }
   .active-link,
   .link:hover {
-    color: $expo-blue-text;
+    color: $color-ededed;
   }
   .input {
     border: none;

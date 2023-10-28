@@ -8,6 +8,7 @@ const classNameGenerator =  ({ isActive }) => {
 }
 
 export const NavBar = () => {
+  return null;
   return (
     <div className="root-navbar-container g-10">
       {/* <NavLink
@@ -22,7 +23,7 @@ export const NavBar = () => {
       <NavLink 
         to="/"
         className={classNameGenerator}
-      >Home</NavLink>
+      >Overview</NavLink>
       <NavLink
         to={"/javascript-notes"}
         className={classNameGenerator}

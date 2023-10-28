@@ -10,6 +10,7 @@ export interface ICourseItem {
   price: number;
   discount: number;
   curriculumPoints: string[];
+  link: string;
 }
 
 export interface ICoursesModel {

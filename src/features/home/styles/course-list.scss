@@ -1,11 +1,13 @@
 @import "../../../styles/colors.scss";
 
 .our-courses {
-    background-color: $white;
-    padding: 50px;
-  .section-title{
+  padding: 50px;
+  background-image: url("../../../images/grid.svg");
+  box-shadow: 2px 2px 10px $brand;
+
+  .section-title {
     text-align: center;
-    background-image: linear-gradient(to right, red, blue);
+    background-image: linear-gradient(to right, #683fbe, #ccbdeb);
     -webkit-background-clip: text;
     color: transparent;
     font-weight: 900;
@@ -21,10 +23,10 @@
     padding: 20px 0;
     .course-item {
       width: min(400px, 90vw);
-      background-color: #fff;
+      background-color: $brand-bg;
       position: relative;
-      box-shadow: 2px 2px 5px $color-ededed;
       border-radius: 10px;
+      color: $white;
       .header {
         height: 100px;
         padding: 20px;
@@ -36,10 +38,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         .badge {
-          border: 1px solid #ededed;
           position: absolute;
           top: -20px;
-          background-color: $expo-blue-background;
+          background-color: $brand;
           color: $white;
           padding: 10px 6px;
           border-radius: 4px;
@@ -56,7 +57,7 @@
         .chips {
           .chip {
             font-size: 12px;
-            background-color: $expo-blue-background;
+            background-color: $brand;
             color: $white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -66,9 +67,15 @@
           margin: 20px 0;
         }
         .curriculum-points {
-          .point {  
-            color :$expo-blue-background;
-            font-size: 14px;
+          .point {
+            // color :$expo-blue-background;
+            .icon {
+              color: #8362c8;
+              font-size: 20px !important;
+            }
+            .text {
+              color: $white;
+            }
           }
         }
       }
@@ -77,19 +84,28 @@
         padding: 20px;
         .btn-apply {
           border: none;
-          background-color: $expo-blue-background;
-          color: white;
+          background-color: $brand;
+          color: $white;
           padding: 10px;
           border-radius: 5px;
           flex-grow: 1;
           cursor: pointer;
           transition: 0.4s;
-          font-weight: 600;
+        }
+        .link {
+          font-size: 14px;
+          text-decoration: none;
         }
         .btn-apply:hover {
           scale: 1.01;
         }
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .our-courses {
+    padding: 50px 0px;
   }
 }
