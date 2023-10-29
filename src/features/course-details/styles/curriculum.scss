@@ -1,0 +1,75 @@
+@import "../../../styles/colors.scss";
+.curriculum-root-container {
+  .curriculum-container {
+    width: 60vw;
+    margin: auto;
+    min-height: 800px;
+    .container {
+      display: grid;
+      padding: 40px 0;
+      grid-template-columns: 3fr 8fr;
+      gap: 20px;
+      .topics-list {
+        border-right: 2px solid #ededed;
+        overflow: scroll;
+        div {
+          min-width: 100px;
+          padding: 10px;
+          color: $color-ededed;
+          transition: 0.4s ease-in;
+          color: $brand-light-bg;
+          cursor: pointer;
+        }
+        div:hover,
+        .active {
+          background-color: #221d32;
+          color: $white;
+          font-family: jakarta-bold;
+        }
+      }
+    }
+    .title {
+      font-family: jakarta-extra-bold;
+      font-size: 32px;
+      text-align: center;
+    }
+    .subtitle {
+      margin: 0;
+      font-size: 32px;
+      color: $brand;
+      font-family: jakarta-extra-bold;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .topic-details {
+      font-size: 14px;
+      overflow: scroll;
+      div {
+        padding: 20px 10px;
+        border-radius: 5px;
+        background-image: linear-gradient(to right, $brand, $brand-bg);
+        word-spacing: 6px;
+      }
+      .icon {
+        color: $white;
+        font-size: 15px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .curriculum-root-container {
+    .curriculum-container {
+      width: 90%;
+      padding: 10px;
+      .container {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        .topics-list {
+          border: none;
+        }
+      }
+    }
+  }
+}

@@ -2,15 +2,18 @@ import { ObservableObject, batch, computed, observable } from "@legendapp/state"
 import { ICoursesModel, IInstructorTestimonialModel } from "./home-types";
 import { Endpoints } from "../../network/Endpoints";
 import { RequestMethods, getApiStatus } from "../../network/request";
-import Aravind from "../../images/aravind.jpg";
-import Bharath from "../../images/bharath.jpg";
+import Aravind from "../../images/aravind_circles.svg";
+import Bharath from "../../images/bharath_circles.svg";
+import Dsa from "../../images/dsa.svg";
+import Frontend from "../../images/frontend.svg"
 
 const coursesList = [
     {
         "courseId": 184253,
         "courseName": "Frontend with React",
         "duration": 4.5,
-        "description": "Master frontend development build large scale projects with team of students", "imageUrl": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png",
+        "description": "Master frontend development build large scale projects with team of students",
+        "imageUrl": Frontend,
         "courseType": "SOFTWARE",
         "price": 15000,
         "discount": 0,
@@ -24,13 +27,14 @@ const coursesList = [
             "Redux",
             "Solid projects using React"
         ],
-        "link": "frontend-course-details"
+        "link": "course-details/frontend"
     },
     {
         "courseId": 184254,
         "courseName": "DSA using C++",
         "duration": 4.0,
-        "description": "Master DSA using C++ from scratch with expert instructors in the domain", "imageUrl": "https://s3.amazonaws.com/coursesity-blog/2020/07/data-structure-algorithm-courses.png",
+        "description": "Master DSA using C++ from scratch with expert instructors in the domain",
+        "imageUrl": Dsa,
         "courseType": "SOFTWARE",
         "price": 15000,
         "discount": 0,
@@ -43,17 +47,17 @@ const coursesList = [
             "Dynamic Programming",
             "Tries"
         ],
-        "link": "dsa-course-details"
+        "link": "course-details/dsa"
     }
 ]
 
-const instructors = [
+export const instructors = [
     {
         "name": "Aravind Samudrala",
         "company": "Blue Yonder | Ex BlackBuck",
         "role": "FullStack Developer",
         "designation": "SWE2 Blue Yonder",
-        "college": "NIT Warangal'23 - BTech ECE",
+        "college": "NIT Warangal'22 - BTech ECE",
         "degree": "BTech",
         "imageUrl": Aravind,
         "linkedinUrl": "https://www.linkedin.com/in/samudrala-aravind-13599b172/", "companyLogoUrl": "https://www.blackbuck.com/images/blackbuck-logo.svg",

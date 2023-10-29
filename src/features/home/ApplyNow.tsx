@@ -13,38 +13,38 @@ export const ApplyNow = observer(() => {
   const formRef = useRef(null);
 
   const closeModal = () => {
-      applyNowModel.actions.toggleModal();
+    applyNowModel.actions.toggleModal();
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
     const firstName = formRef.current["firstName"].value;
-    const lastName = formRef.current["lastName"].value;
+    const email = formRef.current["email"].value;
     const phone = formRef.current["phone"].value;
     const countryCode = "+91";
 
-    let formData = { firstName, phone, lastName, countryCode };
+    let formData = { firstName, phone, email, countryCode };
     applyNowModel.actions.submitApplication(formData);
   };
 
   useEffect(() => {
     const submitApiStatus$ = applyNowModel.obsSubmit.apiStatus;
     const formSubmitDisposer = observe(submitApiStatus$, () => {
-        let apiStatus = submitApiStatus$.peek();
-        if(apiStatus === "pending") {
-            setIsLoading(true);
-        }
-        else if(apiStatus === "success" || apiStatus === "error"){
-            setIsLoading(false);
-        }
+      let apiStatus = submitApiStatus$.peek();
+      if (apiStatus === "pending") {
+        setIsLoading(true);
+      }
+      else if (apiStatus === "success" || apiStatus === "error") {
+        setIsLoading(false);
+      }
 
-        if(apiStatus === "error"){
-          setErrorMessage(applyNowModel.obsSubmit?.errorMessage?.peek?.())
-        }
+      if (apiStatus === "error") {
+        setErrorMessage(applyNowModel.obsSubmit?.errorMessage?.peek?.())
+      }
     })
 
     return () => {
-        formSubmitDisposer();
+      formSubmitDisposer();
     }
   }, [])
 
@@ -63,12 +63,7 @@ export const ApplyNow = observer(() => {
             placeholder="First Name"
             required
           />
-          <input 
-            className="input"
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-          />
+          <input name="email" className="input" type="email" required placeholder="Email" />
           <div className="fr-aic g-10">
             <input type="button" className="prefix input" value="+91" disabled />
             <input

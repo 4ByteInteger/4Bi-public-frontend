@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/hero.scss";
 import { applyNowModel } from "../apply-now-model";
+import hero from "../../../images/hero.svg";
 
 export const HeroSection = () => {
     return <div className="hero-section-container">
@@ -20,6 +21,7 @@ export const HeroSection = () => {
             </div>
         </div>
         <div className="right">
+            <img src={hero} alt="4byteinteger hero image" />
         </div>
         <div className="next-batch-details fr-aic jc-c g-10">
             <span>Our Next DSA Batch is Starting on 15 November 2023</span>

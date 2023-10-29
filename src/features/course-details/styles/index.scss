@@ -1,27 +1,146 @@
 @import "../../../styles/colors.scss";
 
 .root-course-details-container {
+  color: $white;
   background-color: $brand-bg;
-  gap: 20px;
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 4fr 10fr;
-  .shortcut-menu {
-    padding: 10px;
-    background-color: #221d32;
-    border-radius: 10px;
-    align-self: start;
-    display: flex;
-    flex-flow: column wrap;
+  font-family: jakarta-medium;
+  p {
+    line-height: 1.6;
+  }
+  .apply-now-float {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1c1a2a;
+    padding: 10px 20px;
     .item {
-      color: #b8b7bd;
-      padding: 10px;
-      cursor: pointer;
+      font-size: 14px;
+      .name {
+        color: $brand-light-bg;
+      }
     }
-    .item:hover {
-      background-color: #e8dcfe;
-      color: #683fbe;
-      font-weight: 500;
+  }
+  .hero-section {
+    background-image: url("../../../images/bits.svg");
+    padding: 40px 0;
+    justify-content: center;
+    .hero-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      text-align: center;
+      margin: auto;
+    }
+    h1 {
+      font-size: 50px;
+      background-image: linear-gradient(to right, $blue-shade, $brand);
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+      font-family: jakarta-extra-bold;
+    }
+  }
+  h1,
+  h2 {
+    margin: 0;
+  }
+  .overview-details {
+    padding: 50px 100px;
+    display: flex;
+    .left {
+      width: 50%;
+      h2 {
+        font-size: 40px;
+        font-family: jakarta-bold;
+      }
+      p {
+        color: $brand-light-bg;
+      }
+    }
+    .right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      .card {
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 10px;
+        b {
+          font-size: 40px;
+          font-family: jakarta-extra-bold;
+          font-weight: 900;
+          color: $white;
+        }
+        span,
+        .icon {
+          font-size: 14px;
+          color: $brand-light-bg;
+        }
+      }
+      .duration {
+        grid-column: 1 / 3;
+        background: linear-gradient(to top, #174578, $brand-bg);
+      }
+      .problems {
+        background: linear-gradient(to top, #553696, $brand-bg);
+      }
+      .live-session {
+        background: linear-gradient(to top, #38735f, $brand-bg);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .root-course-details-container {
+    .apply-now-float {
+      padding: 10px 5px;
+    }
+    .hero-section {
+      text-align: center;
+      padding: 50px 10px;
+      .hero-details {
+        width: 100%;
+      }
+      h1 {
+        font-size: 30px;
+      }
+    }
+    .overview-details {
+      padding: 50px 5px;
+      width: 100%;
+      justify-content: center;
+      .left {
+        flex-grow: 1;
+        h2 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+      .right {
+        gap: 5px;
+        flex-grow: 1;
+        .card {
+          padding: 10px;
+          b {
+            font-size: 20px;
+          }
+          span {
+            font-size: 12px;
+          }
+        }
+        .duration {
+          padding: 20px 10px;
+        }
+      }
     }
   }
 }

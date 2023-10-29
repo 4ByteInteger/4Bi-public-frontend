@@ -1,5 +1,7 @@
 @import "./styles/colors.scss";
 @import url(./styles/fonts.scss);
+@import "./styles/utils.scss";
+@import "./styles/fonts/jakarta-fonts.scss";
 
 body {
   margin: 0;
@@ -34,13 +36,22 @@ code {
 .jc-c{
   justify-content: center;
 }
+.ai-c{
+  align-items: center;
+}
 .fc {
   display: flex;
   flex-direction: column;
 }
+.jc-se {
+  justify-content: space-evenly;
+}
 /* gap 10px */
 .g-10 {
   gap: 10px;
+}
+.g-20 {
+  gap: 20px;
 }
 .gradient-text{
   background-image: linear-gradient(to right, red, blue);

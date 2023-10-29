@@ -25,11 +25,10 @@
       width: min(400px, 90vw);
       background-color: $brand-bg;
       position: relative;
-      border-radius: 10px;
+      // border-radius: 10px;
       color: $white;
       .header {
-        height: 100px;
-        padding: 20px;
+        height: 200px;
         border-radius: 10px 10px 0 0;
         background-color: $expo-blue-text;
         color: $expo-blue-background;

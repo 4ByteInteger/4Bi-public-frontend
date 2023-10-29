@@ -1,0 +1,55 @@
+@import "../../../styles/colors.scss";
+
+.instructor-details-container {
+  background: linear-gradient(to right, #171421, #18477b);
+  border-radius: 20px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  gap: 20px;
+  width: 80vw;
+  margin: auto;
+  img {
+    width: 400px;
+  }
+  .details {
+    flex-grow: 1;
+    .right-badge {
+      float: right;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .byline-text {
+      color: #abb1c0;
+      font-family: jakarta-medium;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .instructor-details-container {
+    background-image: none;
+    background-color: $brand-bg;
+    flex-direction: column;
+    width: 90vw;
+    box-shadow: 0.1px 0.1px 2px $color-ededed;
+    img {
+      width: 100%;
+    }
+    .details {
+      flex-grow: 1;
+      .right-badge {
+        float: right;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .byline-text {
+        color: #abb1c0;
+        font-family: jakarta-medium;
+        font-size: 14px;
+      }
+    }
+  }
+}
