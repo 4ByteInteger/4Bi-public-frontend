@@ -7,8 +7,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import { Curriculum } from "./Curriculum";
 import { InstructorDetails } from "./InstructorDetails";
 
-const width = window.innerWidth;
-
 interface Props {
     data: any;
     onPressApplyNow: () => void;
@@ -17,7 +15,7 @@ interface Props {
 export const CourseDetails: React.FC<Props> = ({ data, onPressApplyNow }) => {
     return (
         <section className="root-course-details-container">
-            <div className={`apply-now-float g-20 fr-aic ${width <= 600 ? 'jc-c' : 'jc-sb'}`}>
+            <div className={`apply-now-float g-20 fr-aic jc-c`}>
                 <div className="fr-aic g-20">
                     <div className="item fc ai-c g-10">
                         <span className="name">Program Duration</span>
@@ -28,10 +26,6 @@ export const CourseDetails: React.FC<Props> = ({ data, onPressApplyNow }) => {
                         <span className="value">{data.floatBar.timings}</span>
                     </div>
                 </div>
-                <button onClick={onPressApplyNow} className="brand-btn fr-aic g-10">
-                    <span>Apply Now</span>
-                    <ChevronRight />
-                </button>
             </div>
             <div className="hero-section fc ai-c">
                 <div className="hero-details">

@@ -4,9 +4,7 @@
   .title {
     color: $white;
   }
-  //   background: linear-gradient(to right, #18477b, #171421);
-  //   background-image: radial-gradient(#171421, #18477b);
-  background-color: #18477b;
+  background-color: #0f2030;
   padding: 100px 30px;
   display: flex;
   flex-direction: column;
@@ -14,9 +12,8 @@
   align-items: center;
   .faq {
     width: min(600px, 80vw);
-    background-color: $brand-bg;
-    color: $brand;
-    border-radius: 10px;
+    color: #1987eb;
+    border-bottom: 0.1px solid #fff;
     padding: 20px;
     cursor: pointer;
     span {
@@ -33,5 +30,9 @@
 @media (max-width: 600px) {
   .faq {
     font-size: 14px;
+    div {
+      display: flex;
+      flex-wrap: nowrap;
+    }
   }
 }

@@ -28,7 +28,7 @@ export const Curriculum = ({ topics }) => {
                         {
                             topics[activeIndex].subtopics.map((subtopic, index) => {
                                 return (
-                                    <div key={index} className="fr-aic g-20 sub-topic">
+                                    <div key={index} className="sub-topic">
                                         <TaskAltIcon className="icon" />
                                         <span className="name">{subtopic}</span>
                                     </div>
