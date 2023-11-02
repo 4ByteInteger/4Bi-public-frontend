@@ -13,17 +13,28 @@
   .faq {
     width: min(600px, 80vw);
     color: #1987eb;
-    border-bottom: 0.1px solid #fff;
     padding: 20px;
     cursor: pointer;
     span {
       font-size: 18px;
       font-weight: 500;
     }
+    .icon {
+      transition: 0.3s;
+    }
+    .open {
+      transform: rotate(90deg);
+    }
   }
   .answer {
     color: #f2f2f2;
     line-height: 1.8;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .open-answer {
+    max-height: 500px;
   }
 }
 

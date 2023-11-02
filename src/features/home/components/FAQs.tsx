@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/faqs.scss";
 import ChevronRight from "@mui/icons-material/ChevronRight";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const faqs = [
     {
@@ -42,7 +41,7 @@ export const FAQs = () => {
     const [activeItem, setActiveItem] = useState(-1);
 
     const toggleIndex = (index: number) => {
-        if(activeItem === index) {
+        if (activeItem === index) {
             setActiveItem(-1);
         }
         else {
@@ -55,11 +54,14 @@ export const FAQs = () => {
         {
             faqs.map((faq, index) => {
                 return <div className="faq" onClick={() => toggleIndex(index)}>
-                        <div className="fr-aic jc-sb">
-                            <span>{faq.question}</span> {index === activeItem ? <ExpandMoreIcon /> : <ChevronRight />}
-                        </div>
-                        {index === activeItem && <p className="answer">{faq.answer}</p>}
+                    <div className="fr jc-sb">
+                        <span>{faq.question}</span>
+                        <ChevronRight className={`icon ${index === activeItem ? 'open' : ''}`} />
                     </div>
+                    <p
+                        className={`answer ${index === activeItem ? 'open-answer' : ''}`}
+                    >{faq.answer}</p>
+                </div>
             })
         }
     </div>;
