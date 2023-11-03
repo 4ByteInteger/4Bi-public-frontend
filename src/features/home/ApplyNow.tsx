@@ -18,12 +18,12 @@ export const ApplyNow = observer(() => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const firstName = formRef.current["firstName"].value;
+    const name = formRef.current["name"].value;
     const email = formRef.current["email"].value;
     const phone = formRef.current["phone"].value;
     const countryCode = "+91";
 
-    let formData = { firstName, phone, email, countryCode };
+    let formData = { name, phone, email, countryCode };
     applyNowModel.actions.submitApplication(formData);
   };
 
@@ -59,8 +59,8 @@ export const ApplyNow = observer(() => {
           <input
             className="input"
             type="text"
-            name="firstName"
-            placeholder="First Name"
+            name="name"
+            placeholder="Name"
             required
           />
           <input name="email" className="input" type="email" required placeholder="Email" />
