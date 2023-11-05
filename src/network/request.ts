@@ -54,13 +54,12 @@ export async function request(httpConfig: IHttpConfig): IRequestResponse {
           });
         })
         .catch((axiosError) => {
-          const serverResponse = axiosError.response?.data ;
-          console.log({serverResponse});
+          const serverResponse = axiosError.response?.data;
 
           resolve({
             message: serverResponse?.errorMessage ?? "Something went wrong",
             status: "error",
-            statusCode: serverResponse?.statusCode ?? axiosError?.response?.status, 
+            statusCode: serverResponse?.statusCode ?? axiosError?.response?.status,
             // If Custom Status code is not available from BE then need to use the status code from the axiosError object.
           });
         });

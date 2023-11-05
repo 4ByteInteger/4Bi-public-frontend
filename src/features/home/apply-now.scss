@@ -12,7 +12,7 @@
   background-color: #111827bf;
   animation: smooth 0.4s;
   .modal-body {
-    min-width: 300px;
+    width: min(300px, 90vw);
     background-color: white;
     padding: 100px 50px;
     box-shadow: 2px 2px 12px gray;

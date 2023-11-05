@@ -18,7 +18,8 @@ interface Props {
 export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
   const coursesList = coursesList$?.get?.();
 
-  const toggleApplyNowModal = () => {
+  const toggleApplyNowModal = (courseValue: string) => {
+    applyNowModel.selectedCourse = courseValue;
     applyNowModel.status$.set(old => !old)
   }
 
@@ -62,7 +63,7 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
                 </div>
               </div>
               <div className="footer fr-aic jc-sb g-10">
-                <button className="btn-apply" onClick={toggleApplyNowModal}>Get a callback</button>
+                <button className="btn-apply" onClick={() => toggleApplyNowModal(course.identifier)}>Get a callback</button>
                 <Link to={course.link} className="btn-apply link fr-aic jc-c g-10">
                   <span>View Details</span>
                   <ChevronRightIcon style={{ fontSize: "16px" }} />

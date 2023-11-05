@@ -11,12 +11,14 @@ import { globalSnackBarModel } from "../../components/snackbar/global-snackbar-m
 class AppyNowModel {
   status$: ObservablePrimitive<boolean>;
   obsSubmit: ObservableObject<{ apiStatus: ApiStatus, errorMessage?: string }>;
+  selectedCourse: string;
 
   constructor() {
     this.status$ = observable<boolean>(false);
     this.obsSubmit = observable({
       apiStatus: "init",
     });
+    this.selectedCourse = "DSA";
   }
 
   private submitApplication = async (data: any) => {

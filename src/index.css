@@ -1,6 +1,6 @@
 @import "./styles/colors.scss";
 @import url(./styles/fonts.scss);
-@import "./styles/utils.scss";
+@import url(./styles/utils.scss);
 @import "./styles/fonts/jakarta-fonts.scss";
 
 body {
@@ -78,21 +78,4 @@ code {
 *::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.649);
   border-radius: 10px;
-}
-
-.brand-btn {
-  background-color: #683fbe;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease-in;
-  font-family: jakarta-bold;
-}
-
-@media (max-width: 600px) {
-  .brand-btn {
-    padding: 5px;
-  }
 }

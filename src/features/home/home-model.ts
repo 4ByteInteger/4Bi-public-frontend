@@ -27,7 +27,8 @@ const coursesList = [
             "Redux",
             "Solid projects using React"
         ],
-        "link": "course-details/frontend"
+        "link": "course-details/frontend",
+        "identifier": "FRONTEND"
     },
     {
         "courseId": 184254,
@@ -47,7 +48,8 @@ const coursesList = [
             "Dynamic Programming",
             "Tries"
         ],
-        "link": "course-details/dsa"
+        "link": "course-details/dsa",
+        "identifier": "DSA"
     }
 ]
 

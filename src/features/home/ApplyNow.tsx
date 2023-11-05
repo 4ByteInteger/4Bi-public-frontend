@@ -12,7 +12,7 @@ export const ApplyNow = observer(() => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef(null);
-  const selectedCourse = "DSA";
+  const [selectedCourse, setSelectedCourse] = useState(applyNowModel.selectedCourse);
 
   const closeModal = () => {
     setErrorMessage('');
@@ -91,7 +91,7 @@ export const ApplyNow = observer(() => {
           <input className="input" type="text" required name="college" placeholder="College Name" />
           <input type="text" name="stream" required className="input" placeholder="Course Ex: BTech, BCA.." />
           <input className="input" type="text" required name="branch" placeholder="Branch Ex: ECE, CSE.." />
-          <select className="input" name="course" required value={selectedCourse} disabled>
+          <select className="input" name="course" required onChange={(e) => setSelectedCourse(e.target.value)} value={selectedCourse}>
             <option value="FRONTEND">Frontend</option>
             <option value="DSA">DSA</option>
           </select>

@@ -1,5 +1,7 @@
 import { ApiStatus, IError } from "../../network/network.types";
 
+type AvailableCourse = "DSA" | "FRONTEND";
+
 export interface ICourseItem {
   courseId: number;
   courseName: string;
@@ -11,6 +13,7 @@ export interface ICourseItem {
   discount: number;
   curriculumPoints: string[];
   link: string;
+  identifier: AvailableCourse;
 }
 
 export interface ICoursesModel {
