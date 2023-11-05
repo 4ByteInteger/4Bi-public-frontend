@@ -73,7 +73,7 @@ export const instructors = [
         "college": "NIT Warangal'23 - BTech CSE",
         "degree": "BTech",
         "imageUrl": Bharath,
-        "linkedinUrl": "https://www.linkedin.com/in/samudrala-aravind-13599b172/",
+        "linkedinUrl": "https://www.linkedin.com/in/sai-bharath-5104b51a4/",
         "companyLogoUrl": "https://cdn.logojoy.com/wp-content/uploads/20230629132639/current-logo-1536x864.png",
         "description": "Bharath, an NIT Warangal CSE graduate, excels in data structures and algorithms. He secured a 6-month Amazon internship, earned a PPO, and contributed as a Backend Developer at Saras Analytics."
     }];

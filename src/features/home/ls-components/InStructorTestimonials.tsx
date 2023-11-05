@@ -23,16 +23,18 @@ export const InStructorTestimonials: React.FC<Props> = observer(({ data$ }) => {
             <div className="instructor-card" key={index}>
               <div className="fr-aic jc-sb header">
                 <img className="profile-image" src={instructor.imageUrl} alt="instructor image" />
-                <LinkedInIcon className="linkedin-icon"/>
+                <a href={instructor.linkedinUrl} target="_blank">
+                  <LinkedInIcon className="linkedin-icon" />
+                </a>
               </div>
               <h3>{instructor.name}</h3>
               <p>
                 {instructor.description}
               </p>
               <p className="college">{instructor.college}</p>
-              <div className="fr-aic jc-sb" style={{ alignItems: 'flex-end'}}>
+              <div className="fr-aic jc-sb" style={{ alignItems: 'flex-end' }}>
                 <span>{instructor.designation}</span>
-                <img src={instructor.companyLogoUrl} alt="Company Logo"  className="company-logo"/>
+                <img src={instructor.companyLogoUrl} alt="Company Logo" className="company-logo" />
               </div>
             </div>
           );
