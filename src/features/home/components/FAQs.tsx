@@ -53,7 +53,7 @@ export const FAQs = () => {
         <h2 className="title">Frequently Asked Questions</h2>
         {
             faqs.map((faq, index) => {
-                return <div className="faq" onClick={() => toggleIndex(index)}>
+                return <div className="faq" onClick={() => toggleIndex(index)} key={index}>
                     <div className="fr jc-sb">
                         <span>{faq.question}</span>
                         <ChevronRight className={`icon ${index === activeItem ? 'open' : ''}`} />

@@ -5,14 +5,17 @@ import { observer } from "@legendapp/state/react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Spinner } from "../../components/loaders/spinner";
 import { observe } from "@legendapp/state";
+import CallIcon from '@mui/icons-material/Call';
 
 export const ApplyNow = observer(() => {
   const modalStatus = applyNowModel.status$.get();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef(null);
+  const selectedCourse = "DSA";
 
   const closeModal = () => {
+    setErrorMessage('');
     applyNowModel.actions.toggleModal();
   };
 
@@ -21,9 +24,14 @@ export const ApplyNow = observer(() => {
     const name = formRef.current["name"].value;
     const email = formRef.current["email"].value;
     const phone = formRef.current["phone"].value;
+    const course = formRef.current["course"].value;
+    const branch = formRef.current["branch"].value;
+    const stream = formRef.current["stream"].value;
+    const college = formRef.current["college"].value;
+
     const countryCode = "+91";
 
-    let formData = { name, phone, email, countryCode };
+    let formData = { name, phone, email, countryCode, course, college, stream, branch };
     applyNowModel.actions.submitApplication(formData);
   };
 
@@ -48,12 +56,17 @@ export const ApplyNow = observer(() => {
     }
   }, [])
 
-  if (!modalStatus) return null;
+  if (!modalStatus) {
+    return null;
+  };
 
   return (
     <div className="modal-right">
       <div className="modal-body">
-        <h4>Our Team will get in touch with you!</h4>
+        <h3 className="fr-aic g-10 jc-c">
+          <CallIcon />
+          <span>Request a Callback</span>
+        </h3>
         <CloseIcon className="close" onClick={closeModal} />
         <form className="form" ref={formRef} onSubmit={onSubmit}>
           <input
@@ -67,7 +80,6 @@ export const ApplyNow = observer(() => {
           <div className="fr-aic g-10">
             <input type="button" className="prefix input" value="+91" disabled />
             <input
-              type="number"
               pattern="^\d{10}$"
               title="enter a valid 10 digit number"
               name="phone"
@@ -76,9 +88,16 @@ export const ApplyNow = observer(() => {
               placeholder="Phone"
             />
           </div>
+          <input className="input" type="text" required name="college" placeholder="College Name" />
+          <input type="text" name="stream" required className="input" placeholder="Course Ex: BTech, BCA.." />
+          <input className="input" type="text" required name="branch" placeholder="Branch Ex: ECE, CSE.." />
+          <select className="input" name="course" required value={selectedCourse} disabled>
+            <option value="FRONTEND">Frontend</option>
+            <option value="DSA">DSA</option>
+          </select>
           {errorMessage && <span className="error-message">{errorMessage}</span>}
           <button className="btn fr-aic g-10" disabled={isLoading}>
-            <span>Get a callback</span>
+            <span>Request a callback</span>
             {isLoading && <Spinner />}
           </button>
         </form>

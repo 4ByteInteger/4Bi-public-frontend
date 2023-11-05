@@ -35,7 +35,7 @@ export const Presentations = () => {
             <div className="presentations">
                 {
                     items.map((item, index) => {
-                        return <div className="item">
+                        return <div className="item" key={index}>
                             <item.Icon className={`icon icon${index + 1}`} />
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
