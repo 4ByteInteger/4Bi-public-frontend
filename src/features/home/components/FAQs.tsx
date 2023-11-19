@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         question: "What is the fee structure for the program?",
-        answer: "For the Data Structures and Algorithms (DSA) course, the fee is 15,000, and the program spans 4 months. For the Frontend Development course, the fee is 25,000, and it runs for 5 months."
+        answer: "For the Data Structures and Algorithms (DSA) course, the fee is 5,000, and the program spans 4 months. For the Frontend Development course, the fee is 20,000, and it runs for 5 months."
     },
     {
         question: "Are there any awards for the top-ranking students in the class?",

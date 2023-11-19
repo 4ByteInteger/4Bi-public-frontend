@@ -3,7 +3,7 @@ import "./styles/instructor-details.scss";
 
 export const InstructorDetails = ({ data }: { data: any }) => {
     return (
-        <>
+        <div style={{ marginBottom: 100 }}>
             <h2 style={{ textAlign: 'center', margin: "20px 0" }}>Know Your Instructor</h2>
             <div className="instructor-details-container">
                 <img src={data.imageUrl} alt="Aravind Circles image" />
@@ -20,6 +20,6 @@ export const InstructorDetails = ({ data }: { data: any }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

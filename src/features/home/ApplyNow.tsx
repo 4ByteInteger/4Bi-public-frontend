@@ -36,6 +36,14 @@ export const ApplyNow = observer(() => {
   };
 
   useEffect(() => {
+    if (errorMessage) {
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 5000)
+    }
+  }, [errorMessage])
+
+  useEffect(() => {
     const submitApiStatus$ = applyNowModel.obsSubmit.apiStatus;
     const formSubmitDisposer = observe(submitApiStatus$, () => {
       let apiStatus = submitApiStatus$.peek();

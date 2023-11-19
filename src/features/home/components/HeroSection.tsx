@@ -24,7 +24,7 @@ export const HeroSection = () => {
             <img src={hero} alt="4byteinteger hero image" />
         </div>
         <div className="next-batch-details fr-aic jc-c g-10">
-            <span>Our Next DSA Batch is Starting on 15 November 2023</span>
+            <span>Our Next DSA Batch is Starting on 10 December 2023</span>
             <button onClick={() => applyNowModel.status$.set(true)}>Enroll Now</button>
         </div>
     </div>;
