@@ -22,14 +22,15 @@ class AppyNowModel {
   }
 
   private submitApplication = async (data: any) => {
+    data.timestamp = new Date().toISOString();
     this.obsSubmit.apiStatus.set("pending");
     const httpConfig = {
       url: Endpoints.enroll,
       method: RequestMethods.POST,
       data,
     };
-    let response = await request(httpConfig);
 
+    let response = await request(httpConfig);
     if (response.status === "success") {
       this.toggleModal();
       this.obsSubmit.apiStatus.set("success");

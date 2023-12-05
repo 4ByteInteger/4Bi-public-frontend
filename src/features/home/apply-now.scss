@@ -20,6 +20,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    .message {
+      font-size: 14px;
+      color: $brand;
+    }
     .close {
       position: absolute;
       top: 30px;
@@ -32,46 +36,29 @@
     .close:hover {
       background-color: #ededed;
     }
-    .form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-      .prefix,
-      .btn,
-      .input {
-        border: 1px solid #d5dee4;
-        padding: 10px;
-        border-radius: 4px;
-        background-color: transparent;
-      }
-      .phone {
-        flex-grow: 1;
-      }
-      .btn {
-        background-color: $brand;
-        color: $white;
-        font-weight: 600;
-        font-size: 18px;
-        cursor: pointer;
-        justify-content: center;
-      }
-      .input:focus {
-        outline: none;
-      }
-      .btn:hover {
-        background-color: rgba(0, 0, 255, 0.868);
-      }
-      .error-message {
-        color: red;
-        font-size: 12px;
-        text-align: center;
-      }
-      .input::-webkit-outer-spin-button,
-      .input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+    .form-item {
+      margin: 10px 0;
+    }
+    .submit-btn {
+      background-color: $brand;
+      color: $white;
+      margin: 20px 0;
+      font-size: 16px;
+      font-weight: 500;
+      height: auto;
+      cursor: pointer;
+    }
+    .select-input {
+      border: none;
+      background-color: transparent;
+    }
+    .select-input:focus {
+      outline: none;
+    }
+    .error {
+      color: red;
+      display: block;
+      text-align: center;
     }
   }
 }
