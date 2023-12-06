@@ -5,7 +5,7 @@ import { observer } from "@legendapp/state/react";
 import CloseIcon from "@mui/icons-material/Close";
 import { observe } from "@legendapp/state";
 import CallIcon from '@mui/icons-material/Call';
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input } from "antd";
 
 const googleFormLink = "https://forms.gle/iztEBJkwRnJUi64y8";
 

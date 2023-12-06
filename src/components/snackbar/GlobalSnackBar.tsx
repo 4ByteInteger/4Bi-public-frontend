@@ -6,29 +6,29 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 
 const SnackBarIcon: Record<ISnackBarType, () => React.JSX.Element> = {
-  error: () => <ErrorOutlineIcon htmlColor="red" fontSize="small"/>,
+  error: () => <ErrorOutlineIcon htmlColor="red" fontSize="small" />,
   info: () => <InfoOutlinedIcon htmlColor="black" fontSize="small" />,
   success: () => <CheckCircleOutlineOutlinedIcon htmlColor="green" fontSize="small" />,
 };
 
 const colorMapping = {
-    info: "black",
-    success: "green",
-    error: "red"
+  info: "black",
+  success: "green",
+  error: "red"
 }
 
 export const GlobalSnackBar = observer(() => {
   const snackBarOptions = globalSnackBarModel.snackBarConfig$.get();
   const snackBarType = snackBarOptions.type;
 
-    if (!snackBarOptions.isActive) return null;
+  if (!snackBarOptions.isActive) return null;
 
   const IconComponent = SnackBarIcon[snackBarType];
 
   return (
     <div style={styles.container} className="fr-aic g-10">
       {snackBarOptions.showIcon && <IconComponent />}
-      <div style={{...styles.messageText, ...{color: colorMapping[snackBarType]} }}>{snackBarOptions.message}</div>
+      <div style={{ ...styles.messageText, ...{ color: colorMapping[snackBarType] } }}>{snackBarOptions.message}</div>
     </div>
   );
 });
@@ -38,7 +38,7 @@ const styles: Record<string, CSSProperties> = {
     position: "fixed",
     top: "20px",
     right: "20px",
-    zIndex: 1000,
+    zIndex: 9999,
     padding: "20px",
     borderRadius: "5px",
     backgroundColor: 'white',

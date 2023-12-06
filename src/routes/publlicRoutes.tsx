@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { Home } from "../features/home";
 import { CourseDetailsSurface } from "../features/course-details";
+import { GlobalSnackBar } from "../components/snackbar/GlobalSnackBar";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -21,6 +22,7 @@ export const PublicRoutes = () => {
                 <Route path="/" Component={Home} />
                 <Route path="/course-details/:courseId" Component={CourseDetailsSurface} />
             </Routes>
+            <GlobalSnackBar />
         </BrowserRouter>
     );
 }
