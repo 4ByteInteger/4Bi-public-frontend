@@ -1,7 +1,9 @@
 // LOCAL
 // const baseUrl = "http://localhost:8080"
 // DEV 
-const baseUrl = "https://fourbi-service.onrender.com"
+// const baseUrl = "https://fourbi-service.onrender.com"
+// Aws
+const baseUrl = "http://ec2-3-110-105-130.ap-south-1.compute.amazonaws.com:8080";
 
 export const Endpoints = {
     coursesList: `${baseUrl}/course/all`,
