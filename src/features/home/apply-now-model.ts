@@ -6,7 +6,7 @@ import {
 import { ApiStatus } from "../../network/network.types";
 import { RequestMethods, request } from "../../network/request";
 import { Endpoints } from "../../network/Endpoints";
-import { globalSnackBarModel } from "../../components/snackbar/global-snackbar-model";
+import { NotificationInstance } from "antd/es/notification/interface";
 
 class AppyNowModel {
   status$: ObservablePrimitive<boolean>;
@@ -21,7 +21,7 @@ class AppyNowModel {
     this.selectedCourse = "DSA";
   }
 
-  private submitApplication = async (data: any) => {
+  private submitApplication = async (data: any, api: NotificationInstance) => {
     data.timestamp = new Date().toISOString();
     this.obsSubmit.apiStatus.set("pending");
     const httpConfig = {
@@ -34,14 +34,22 @@ class AppyNowModel {
     if (response.status === "success") {
       this.toggleModal();
       this.obsSubmit.apiStatus.set("success");
-      globalSnackBarModel.actions.notifySnackBar({
-        message: response.data,
-        type: "success",
+      api["success"]({
+        message: "Enrollment successful!",
+        description: "Thanks for enrolling, our team will get back to you very shortly!",
+        placement: "topLeft",
+        duration: 100000,
       });
     } else if (response.status === "error") {
       this.obsSubmit.set({
         apiStatus: 'error',
         errorMessage: response.message
+      });
+      api["error"]({
+        message: response.message,
+        description: "Please try again....",
+        duration: 3000,
+        placement: "topLeft"
       });
     }
   };

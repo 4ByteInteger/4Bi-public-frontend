@@ -41,11 +41,11 @@ class GlobalSnackBarModel {
     duration?: number;
     showIcon?: boolean;
   }) => {
-    if(this.timerId){
+    if (this.timerId) {
       clearTimeout(this.timerId);
       this.timerId = undefined;
     }
-    
+
     this.snackBarConfig$.set({
       isActive: true,
       message,
@@ -56,7 +56,7 @@ class GlobalSnackBarModel {
 
     this.timerId = setTimeout(() => {
       this.hideSnackBar();
-      this.timerId  = undefined;
+      this.timerId = undefined;
     }, duration);
   };
 
