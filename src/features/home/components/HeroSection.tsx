@@ -54,7 +54,7 @@ export const HeroSection = () => {
         </div>
         <div className="next-batch-details fr-aic jc-c g-10">
             <span className="timer">{`${timerText} left`}</span>
-            <span>Our Next DSA Batch is Starting on 20 December 2023</span>
+            <span>Our Next DSA Batch is Starting on 26 December 2023</span>
             <button onClick={() => applyNowModel.status$.set(true)}>Enroll Now</button>
         </div>
     </div>;
