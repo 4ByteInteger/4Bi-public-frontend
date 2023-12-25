@@ -52,7 +52,7 @@ export const ApplyNow = observer(() => {
   return (
     <div className="modal-right">
       <div className="modal-body">
-        <a className="message" href={googleFormLink} target="_blank">If you face any issue in submitting , please try here</a>
+        <span className="message">If you face any issue in submitting form <a href={googleFormLink} target="_blank">click here</a></span>
         <h3 className="fr-aic g-10 jc-c">
           <CallIcon />
           <span>Request a Callback</span>

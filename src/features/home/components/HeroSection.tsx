@@ -3,7 +3,7 @@ import "../styles/hero.scss";
 import { applyNowModel } from "../apply-now-model";
 import hero from "../../../images/hero.svg";
 
-const futureTime = new Date('2023-12-20T18:00:00');
+const futureTime = new Date('2023-12-26T18:00:00');
 
 function getTimer() {
     const timeDifference = futureTime - new Date();

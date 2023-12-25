@@ -21,8 +21,9 @@
     flex-direction: column;
     justify-content: center;
     .message {
-      font-size: 14px;
-      color: $brand;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: red;
     }
     .close {
       position: absolute;
