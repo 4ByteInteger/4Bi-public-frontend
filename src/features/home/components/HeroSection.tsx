@@ -3,7 +3,15 @@ import "../styles/hero.scss";
 import { applyNowModel } from "../apply-now-model";
 import hero from "../../../images/hero.svg";
 
-const futureTime = new Date('2023-12-26T18:00:00');
+const months = [
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
+];
+
+const futureTime = new Date('2024-01-16T18:00:00');
+
+const displayText = `Our next DSA batch is starting from ${futureTime.getDate()} ${months[futureTime.getMonth()]} ${futureTime.getFullYear()}`;
 
 function getTimer() {
     const timeDifference = futureTime - new Date();
@@ -25,7 +33,11 @@ export const HeroSection = () => {
 
     useEffect(() => {
         const timerId = setInterval(() => {
-            setTimerText(getTimer());
+            if (futureTime.getTime() <= new Date().getTime()) {
+                clearInterval(timerId);
+                setTimerText("")
+            }
+            else setTimerText(getTimer());
         }, 1000)
 
         return () => {
@@ -52,10 +64,10 @@ export const HeroSection = () => {
         <div className="right">
             <img src={hero} alt="4byteinteger hero image" />
         </div>
-        <div className="next-batch-details fr-aic jc-c g-10">
+        {timerText && <div className="next-batch-details fr-aic jc-c g-10">
             <span className="timer">{`${timerText} left`}</span>
-            <span>Our Next DSA Batch is Starting on 26 December 2023</span>
+            <span>{displayText}</span>
             <button onClick={() => applyNowModel.status$.set(true)}>Enroll Now</button>
-        </div>
+        </div>}
     </div>;
 }
