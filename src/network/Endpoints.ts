@@ -6,7 +6,7 @@
 // const baseUrl = "http://ec2-3-110-105-130.ap-south-1.compute.amazonaws.com:8080";
 
 // AWS cloudfront url
-const baseUrl = "https://dzm3ijcwfledm.cloudfront.net"
+const baseUrl = "https://lms-service.4byteinteger.com"
 
 export const Endpoints = {
     coursesList: `${baseUrl}/course/all`,
