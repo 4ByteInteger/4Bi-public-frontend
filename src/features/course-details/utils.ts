@@ -4,8 +4,8 @@ import { dsaTopicsList, frontendTopicsList } from "./dsa-topics-list";
 export const courseDetailsData = {
     dsa: {
         floatBar: {
-            duration: "Nov 15 2023 - Feb 20 2024",
-            timings: "8PM to 9PM Weekdays"
+            duration: "Dec 26 2023 - Apr 26 2024",
+            timings: "9PM to 10:30PM Weekdays"
         },
         heroSection: {
             title: "Master DSA Using C++",
@@ -32,7 +32,7 @@ export const courseDetailsData = {
     },
     frontend: {
         floatBar: {
-            duration: "Dec 01 2023 - March 15 2024",
+            duration: "Feb 01 2023 - May 15 2024",
             timings: "8PM to 9PM Weekdays"
         },
         heroSection: {
