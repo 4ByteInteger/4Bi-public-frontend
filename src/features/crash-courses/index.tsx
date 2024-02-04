@@ -57,7 +57,7 @@ export const CrashCourses = () => {
                         {
                             perks.map((perk, index) => {
                                 return (
-                                    <li className='fr-aic g-10' key={index} >
+                                    <li className='fr-aic g-10' style={{ flexWrap: "nowrap" }} key={index} >
                                         <CheckCircleIcon className='check-icon' />
                                         <span>{perk}</span>
                                     </li>
@@ -73,7 +73,9 @@ export const CrashCourses = () => {
                     </div>
                     <button className='enroll-btn' onClick={openEnrollModal}>Enroll Now!</button>
                 </div>
-                <iframe src="https://youtube.com/embed/myfQoJsOdjY?rel=0" width={800} height={400} ></iframe>
+                <div className="iframe-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/myfQoJsOdjY?si=Xx6WQ4RImWRQh0Jw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
+                </div>
             </div>
             <TopicsList />
             <div className="instructor">
