@@ -4,7 +4,6 @@ import { courseDetailsData } from "./utils";
 import { CourseDetails } from "./CourseDetails";
 import { useParams } from "react-router-dom";
 import { applyNowModel } from "../home/apply-now-model";
-import { ApplyNow } from "../home/ApplyNow";
 
 export const CourseDetailsSurface = () => {
     const { courseId } = useParams();
@@ -16,7 +15,6 @@ export const CourseDetailsSurface = () => {
     return (
         <>
             <CourseDetails data={courseDetailsData[courseId ?? "dsa"]} onPressApplyNow={onPressApplyNow} />
-            <ApplyNow />
         </>
     );
 }

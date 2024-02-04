@@ -13,17 +13,24 @@
   animation: smooth 0.4s;
   .modal-body {
     width: min(300px, 90vw);
-    background-color: white;
+    background-color: #a6acba;
     padding: 100px 50px;
     box-shadow: 2px 2px 12px gray;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    input {
+      padding: 10px;
+    }
+    select {
+      color: white;
+      font-weight: 600;
+    }
     .message {
       font-weight: 500;
       font-size: 1.1rem;
-      color: red;
+      color: #ff0000;
     }
     .close {
       position: absolute;
@@ -42,10 +49,11 @@
     }
     .submit-btn {
       background-color: $brand;
+      padding: 10px;
       color: $white;
       margin: 20px 0;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 600;
       height: auto;
       cursor: pointer;
     }

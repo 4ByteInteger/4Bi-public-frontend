@@ -7,7 +7,6 @@ import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import { ICourseItem } from "../home-types";
 import "../styles/course-list.scss";
-import { applyNowModel } from "../apply-now-model";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from "react-router-dom";
 
@@ -18,11 +17,6 @@ interface Props {
 export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
   const coursesList = coursesList$?.get?.();
 
-  const toggleApplyNowModal = (courseValue: string) => {
-    applyNowModel.selectedCourse = courseValue;
-    applyNowModel.status$.set(old => !old)
-  }
-
   return (
     <section className="our-courses" id="courses">
       <div className="section-title">Our Courses</div>
@@ -30,19 +24,17 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
         {coursesList?.map?.((course) => {
           return (
             <div className="course-item" key={course.courseId}>
-              <div className="header fr-aic g-10" style={{ backgroundImage: `url(${course.imageUrl})` }}>
-                <b className="badge">{course.courseType}</b>
-              </div>
+              <img src={course.imageUrl} alt={course.courseName} />
               <div className="body">
                 <div className="body-top">
                   <div className="fr-aic g-10">
                     <BookmarksIcon />
-                    <h4>{course.courseName}</h4>
+                    <h2>{course.courseName}</h2>
                   </div>
                   <div className="chips fr-aic">
                     <div className="chip fr-aic g-10">
                       <AlarmOnIcon />
-                      <span>{`Duration: ${course.duration} Months`}</span>
+                      <span>{`Duration: ${course.duration}`}</span>
                     </div>
                   </div>
                   <p>{course.description}</p>
@@ -63,10 +55,9 @@ export const CoursesList: React.FC<Props> = observer(({ coursesList$ }) => {
                 </div>
               </div>
               <div className="footer fr-aic jc-sb g-10">
-                <button className="btn-apply" onClick={() => toggleApplyNowModal(course.identifier)}>Get a callback</button>
                 <Link to={course.link} className="btn-apply link fr-aic jc-c g-10">
                   <span>View Details</span>
-                  <ChevronRightIcon style={{ fontSize: "16px" }} />
+                  <ChevronRightIcon style={{ fontSize: "1.2rem" }} />
                 </Link>
               </div>
             </div>

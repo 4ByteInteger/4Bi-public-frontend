@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { createHomeScreenModel } from "./home-model";
 import { LSReloadingWrapper } from "../../network/components/LSReloadingWrapper";
 import { CoursesList } from "./ls-components/CoursesList";
-import { ApplyNow } from "./ApplyNow";
 import { InStructorTestimonials } from "./ls-components/InStructorTestimonials";
 import { Presentations } from "./components/Presentations";
 import { HeroSection } from "./components/HeroSection";
@@ -38,7 +37,6 @@ export const Home = () => {
       <LSReloadingWrapper apiStatusViews$={homeScreenModel.views_instructor_testimonials} onReload={fetchInstructorTestimonials}>
         <InStructorTestimonials data$={homeScreenModel.instructorTestimonials$.data} />
       </LSReloadingWrapper>
-      <ApplyNow />
       <Presentations />
       <FAQs />
     </div>

@@ -2,40 +2,36 @@ import { ObservableObject, batch, computed, observable } from "@legendapp/state"
 import { ICoursesModel, IInstructorTestimonialModel } from "./home-types";
 import { Endpoints } from "../../network/Endpoints";
 import { RequestMethods, getApiStatus } from "../../network/request";
-import Aravind from "../../images/aravind_circles.svg";
-import Bharath from "../../images/bharath_circles.svg";
-import Dsa from "../../images/dsa.svg";
-import Frontend from "../../images/frontend.svg"
 
 const coursesList = [
     {
-        "courseId": 184253,
-        "courseName": "Frontend with React",
-        "duration": 4.5,
-        "description": "Master frontend development build large scale projects with team of students",
-        "imageUrl": Frontend,
-        "courseType": "SOFTWARE",
-        "price": 15000,
-        "discount": 0,
-        "curriculumPoints": [
-            "HTML and CSS",
-            "JavaScript Basic to Advanced",
-            "DSA using JavaScript",
-            "Document Object Model(DOM)",
-            "Projects using HTML, CSS, JavaScript",
-            "React Basic to Advanced",
-            "Redux",
-            "Solid projects using React"
+        courseId: 383802,
+        courseName: "React & Redux",
+        duration: "8 Weeks",
+        description: "Master the art for state management",
+        imageUrl: "./images/thumbnail.png",
+        price: "4,999",
+        discount: 30,
+        curriculumPoints: [
+            "npm, typescript and js modules",
+            "DOM, VDOM and Diffing Algorithm",
+            "JSX, state, props and Conditional rendering",
+            "Event handling",
+            "Class Components",
+            "Component lifecycle methods",
+            "Functional components & Hooks",
+            "State Management",
+            "Redux and it's underlying architecture",
         ],
-        "link": "course-details/frontend",
-        "identifier": "FRONTEND"
+        "link": "react-redux/course-details",
+        "identifier": "REACT_REDUX"
     },
     {
         "courseId": 184254,
         "courseName": "DSA using C++",
-        "duration": 4.0,
+        "duration": "4 Months",
         "description": "Master DSA using C++ from scratch with expert instructors in the domain",
-        "imageUrl": Dsa,
+        "imageUrl": "./images/dsa.svg",
         "courseType": "SOFTWARE",
         "price": 15000,
         "discount": 0,
@@ -50,7 +46,7 @@ const coursesList = [
         ],
         "link": "course-details/dsa",
         "identifier": "DSA"
-    }
+    },
 ]
 
 export const instructors = [
@@ -61,7 +57,7 @@ export const instructors = [
         "designation": "SWE2 Blue Yonder",
         "college": "NIT Warangal'22 - BTech ECE",
         "degree": "BTech",
-        "imageUrl": Aravind,
+        "imageUrl": "./images/aravind_circles.svg",
         "linkedinUrl": "https://www.linkedin.com/in/samudrala-aravind-13599b172/", "companyLogoUrl": "https://www.blackbuck.com/images/blackbuck-logo.svg",
         "description": "Aravind is an exceptional Instructor for advanced front-end development, OOPS, & Node.js. He strives to aid students in securing frontend and backend positions at product-based companies.",
     },
@@ -72,7 +68,7 @@ export const instructors = [
         "designation": "SDE1 Saras Analytics",
         "college": "NIT Warangal'23 - BTech CSE",
         "degree": "BTech",
-        "imageUrl": Bharath,
+        "imageUrl": "../../images/bharath_circles.svg",
         "linkedinUrl": "https://www.linkedin.com/in/sai-bharath-5104b51a4/",
         "companyLogoUrl": "https://cdn.logojoy.com/wp-content/uploads/20230629132639/current-logo-1536x864.png",
         "description": "Bharath, an NIT Warangal CSE graduate, excels in data structures and algorithms. He secured a 6-month Amazon internship, earned a PPO, and contributed as a Backend Developer at Saras Analytics."

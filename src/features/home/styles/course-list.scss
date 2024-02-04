@@ -23,29 +23,14 @@
     padding: 20px 0;
     .course-item {
       width: min(400px, 90vw);
-      background-color: $brand-bg;
+      background-color: #232b33;
       position: relative;
-      // border-radius: 10px;
+      border-radius: 10px;
       color: $white;
-      .header {
-        height: 200px;
-        border-radius: 10px 10px 0 0;
-        background-color: $expo-blue-text;
-        color: $expo-blue-background;
-        font-family: largeText;
-        font-size: 20px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        .badge {
-          position: absolute;
-          top: -20px;
-          background-color: $brand;
-          color: $white;
-          padding: 10px 6px;
-          border-radius: 4px;
-          font-size: 12px;
-          left: 40%;
-        }
+      padding: 10px;
+      img {
+        width: 100%;
+        border-radius: 10px;
       }
       .body {
         padding: 20px;
@@ -55,11 +40,10 @@
         }
         .chips {
           .chip {
-            font-size: 12px;
-            background-color: $brand;
+            background-color: #683fbe;
             color: $white;
             padding: 5px 10px;
-            border-radius: 4px;
+            border-radius: 20px;
           }
         }
         .title {
@@ -67,13 +51,12 @@
         }
         .curriculum-points {
           .point {
-            // color :$expo-blue-background;
             .icon {
-              color: #8362c8;
+              color: #a6acba;
               font-size: 20px !important;
             }
             .text {
-              color: $white;
+              color: #a6acba;
             }
           }
         }
@@ -83,20 +66,18 @@
         padding: 20px;
         .btn-apply {
           border: none;
-          background-color: $brand;
+          background-color: #683fbe;
           color: $white;
           padding: 10px;
-          border-radius: 5px;
+          border-radius: 20px;
           flex-grow: 1;
           cursor: pointer;
           transition: 0.4s;
+          font-size: 1.2rem;
+          font-weight: 600;
         }
         .link {
-          font-size: 14px;
           text-decoration: none;
-        }
-        .btn-apply:hover {
-          scale: 1.01;
         }
       }
     }
