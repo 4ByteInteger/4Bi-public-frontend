@@ -1,49 +1,45 @@
 @import "../../../styles/colors.scss";
 
 .faqs-container {
+  padding-bottom: 100px;
+  background-color: #f9fcff;
+  display: grid;
+  padding: 20px max(10px, 10vw);
+  grid-template-columns: 3fr 2fr;
+  .left {
+    button {
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      background-color: #1270ff;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+  }
+  .accordion-container {
+    width: min(600px, 90vw);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: transparent;
+  }
   .title {
     color: $white;
-  }
-  background-color: #0f2030;
-  padding: 100px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  .faq {
-    width: min(600px, 80vw);
-    color: #1987eb;
-    padding: 20px;
-    cursor: pointer;
-    span {
-      font-size: 18px;
-      font-weight: 500;
-    }
-    .icon {
-      transition: 0.3s;
-    }
-    .open {
-      transform: rotate(90deg);
-    }
-  }
-  .answer {
-    color: #f2f2f2;
-    line-height: 1.8;
-    transition: max-height 0.5s ease;
-    overflow: hidden;
-    max-height: 0;
-  }
-  .open-answer {
-    max-height: 500px;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #141e70;
+    padding: 1rem 0;
   }
 }
 
 @media (max-width: 600px) {
-  .faq {
-    font-size: 14px;
-    div {
-      display: flex;
-      flex-wrap: nowrap;
+  .faqs-container {
+    grid-template-columns: auto !important;
+    padding: 10px;
+    gap: 20px;
+    .left {
+      text-align: center;
     }
   }
 }

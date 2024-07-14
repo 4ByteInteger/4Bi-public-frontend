@@ -2,22 +2,30 @@
 
 .instructor-testimonials-container {
   padding: 50px 30px;
-  background: radial-gradient(#2c1f31, #171421);
-  .section-title {
-    text-align: center;
-    color: $color-ededed;
-    font-weight: 900;
-    font-size: 30px;
-    margin: 50px 0;
-    font-family: largeText;
+  background-color: #e5f2ff;
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #021128;
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .section-title {
+      text-align: center;
+      font-weight: 900;
+      font-size: 30px;
+      font-family: largeText;
+    }
   }
   .instructor-cards {
     gap: 20px;
     justify-content: center;
     .instructor-card {
       max-width: 300px;
-      background-color: $brand-bg;
-      color: $white;
+      background-color: $white;
+      border: 1px solid #e2e7ec;
       padding: 20px;
       border-radius: 10px;
       .college {
@@ -33,10 +41,11 @@
         position: relative;
         background-color: #221d32;
         border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
         .profile-image {
           width: 100%;
-          height: 150px;
-          object-fit: cover;
+          object-fit: contain;
           border-radius: 10px;
           padding: 20px;
         }

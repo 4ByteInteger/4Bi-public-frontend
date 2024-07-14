@@ -1,4 +1,3 @@
-import { Observable } from "@legendapp/state";
 import { ApiStatus } from "./network.types";
 import axios from "axios";
 
@@ -39,7 +38,7 @@ interface IRequestResponse {
   data?: any;
   message?: string;
   statusCode?: number;
-  status: "error" | "success";
+  success: boolean;
 }
 
 export async function request(httpConfig: IHttpConfig): IRequestResponse {
@@ -49,7 +48,7 @@ export async function request(httpConfig: IHttpConfig): IRequestResponse {
         .then((response) => {
           resolve({
             data: response.data,
-            status: "success",
+            success: true,
             statusCode: response.status,
           });
         })
@@ -57,16 +56,17 @@ export async function request(httpConfig: IHttpConfig): IRequestResponse {
           const serverResponse = axiosError.response?.data;
 
           resolve({
-            message: serverResponse?.errorMessage ?? "Something went wrong",
-            status: "error",
-            statusCode: serverResponse?.statusCode ?? axiosError?.response?.status,
+            data: serverResponse?.errorMessage ?? "Something went wrong",
+            success: false,
+            statusCode:
+              serverResponse?.statusCode ?? axiosError?.response?.status,
             // If Custom Status code is not available from BE then need to use the status code from the axiosError object.
           });
         });
     } catch (error) {
       resolve({
-        message: error?.getMessage?.() ?? "Something went wrong",
-        status: "error",
+        data: error.message ?? "Something went wrong",
+        success: false,
       });
     }
   });

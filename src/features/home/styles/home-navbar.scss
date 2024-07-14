@@ -4,7 +4,8 @@
   padding: 5px 18px;
   position: sticky;
   top: 0;
-  background-color: $brand;
+  box-shadow: 1px 2px 2px #f2f2f2;
+  background-color: $white;
   z-index: 10;
   .logo {
     width: 80px;
@@ -16,19 +17,19 @@
     align-items: center;
     a {
       text-decoration: none;
-      color: $white;
+      color: #909090;
       font-weight: 500;
     }
-    button {
+    .btn {
+      background-color: #1270ff;
       border: none;
-      background-color: transparent;
       color: $white;
+      padding: 10px 20px;
       font-weight: 600;
-      background-color: #e8dcfe;
-      color: #6e47c2;
-      padding: 10px;
-      border-radius: 4px;
-      cursor: pointer;
+    }
+    .highlight {
+      font-weight: 600;
+      color: #08143d;
     }
   }
 }

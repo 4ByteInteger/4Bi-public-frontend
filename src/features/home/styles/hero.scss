@@ -3,64 +3,45 @@
 .hero-section-container {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  background-color: $color-171421;
-  background-image: url(../../../images/grid.svg);
+  background-color: $white;
+  padding: 2rem;
   .left {
-    padding: 100px 20px;
     h1 {
-      color: $white;
-      font-family: globalText;
-      font-size: 40px;
+      color: #2b2e44;
+      font-weight: 900;
+      font-size: 3rem;
+      .blue-text {
+        color: #1271ff;
+        margin: 0;
+      }
     }
     p {
-      color: $color-ededed;
-      font-size: 24px;
+      line-height: 1.6;
     }
-    .item {
-      padding: 40px;
-      border-radius: 10px;
-      margin: 20px 0;
+    .apply-btn {
+      padding: 10px 1rem;
+      background-color: #1271ff;
       color: $white;
-      b {
-        font-size: 40px;
+      border: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: #08143d;
       }
-      span {
-        font-size: 20px;
-      }
-    }
-    .item1 {
-      background: linear-gradient(to bottom right, #174d83, #172139);
-    }
-    .item2 {
-      background: linear-gradient(to bottom right, #36765b, #1c262b);
     }
   }
   .right {
-    padding: 100px 20px;
+    display: flex;
+    align-self: center;
     justify-self: center;
-    background: radial-gradient(#2a1f2e, #2a1f2e4f, #17142160);
-    border-radius: 10px;
-    img {
-      filter: contrast(10px) hue-rotate(100px);
-    }
-  }
-  .next-batch-details {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 5px;
-    color: $white;
-    background-color: #221d32;
-    z-index: 100;
-    button {
-      padding: 10px 20px;
-      font-weight: 600;
+    iframe {
+      width: min(90vw, 600px);
+      height: min(380px, 60vw);
       border: none;
-      background-color: $brand;
-      color: $white;
       border-radius: 10px;
-      cursor: pointer;
     }
   }
 }
@@ -68,12 +49,11 @@
 @media (max-width: 600px) {
   .hero-section-container {
     grid-template-columns: 1fr;
-  }
-  .next-batch-details {
-    font-size: 14px;
-  }
-  .right {
-    display: none;
+    gap: 20px;
+    padding: 10px;
+    iframe {
+      height: 200px;
+    }
   }
   .items {
     flex-direction: column;
